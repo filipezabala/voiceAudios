@@ -43,7 +43,7 @@ Sys.time()-ini # Time difference of 2.465053 mins
 
 # split wave
 ini <- Sys.time()
-splitw(wavDir, fromRttm = rttmDir, to = splitDir)
+voice::splitw(wavDir, fromRttm = rttmDir, to = splitDir)
 Sys.time()-ini # Time difference of 2.348608 secs
 
 # extract features
