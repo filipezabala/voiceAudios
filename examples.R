@@ -1,18 +1,31 @@
-# downloading public domain audio
-url1 <- 'https://archive.org/download/adventuressherlockholmes_v4_1501_librivox/adventuresofsherlockholmes_01_doyle_128kb.mp3'
-cmd1 <- paste0('cd ~/Downloads; wget -r -np -k ', url1)
-system(cmd1)
-
-setwd('~/Dropbox/D_Filipe_Zabala/pacotes/voiceAudios/')
-cmd2 <- 'cd ~/Dropbox/D_Filipe_Zabala/pacotes/voiceAudios/; for i in *.[Mm][Pp]3; do ffmpeg -i "$i" "${i%.*}.wav"; done'
-system(cmd2)
+# # downloading public domain audio
+# url1 <- 'https://archive.org/download/adventuressherlockholmes_v4_1501_librivox/adventuresofsherlockholmes_01_doyle_128kb.mp3'
+# cmd1 <- paste0('cd ~/Downloads; wget -r -np -k ', url1)
+# system(cmd1)
+#
+# setwd('~/Dropbox/D_Filipe_Zabala/pacotes/voiceAudios/')
+# cmd2 <- 'cd ~/Dropbox/D_Filipe_Zabala/pacotes/voiceAudios/; for i in *.[Mm][Pp]3; do ffmpeg -i "$i" "${i%.*}.wav"; done'
+# system(cmd2)
 
 # libs
 library(voice)
 library(tidyverse)
 
+url0 <- 'https://github.com/filipezabala/voiceAudios/raw/main/mp3/sherlock0.mp3'
+url1 <- 'https://github.com/filipezabala/voiceAudios/raw/main/mp3/sherlock1.mp3'
+url2 <- 'https://github.com/filipezabala/voiceAudios/raw/main/mp3/sherlock2.mp3'
+
+system(paste0('wget -r -np -k ', url0, ' -P ~/Downloads'))
+system(paste0('wget -r -np -k ', url1, ' -P ~/Downloads'))
+system(paste0('wget -r -np -k ', url2, ' -P ~/Downloads'))
+
+system('mkdir ~/Downloads/voiceAudios/')
+system('mkdir ~/Downloads/voiceAudios/mp3')
+system('cp ~/Downloads/github.com/filipezabala/voiceAudios/raw/main/mp3/*.* ~/Downloads/voiceAudios/mp3')
+system('rm -rf ~/Downloads/github.com/')
+
 # wd
-setwd('~/Dropbox/D_Filipe_Zabala/pacotes/voiceAudios/')
+setwd('~/Downloads/')
 
 # files and directories
 wavDir <- paste0(getwd(), '/wav')
@@ -72,3 +85,4 @@ Sys.time()-ini # Time difference of 36.89806 secs
 # exploratory
 table(nome)
 by(ef, ef$file_name, summary)
+ccc

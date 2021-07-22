@@ -1,1 +1,40 @@
+Male
 https://archive.org/details/adventuressherlockholmes_v4_1501_librivox
+https://archive.org/details/romeoandjuliet_ss_0901_librivox/
+https://archive.org/details/war_and_peace_01_librivox/
+
+Female
+https://archive.org/details/game_of_life_0911_librivox/
+https://archive.org/details/phantomlover_1110_librivox/
+https://archive.org/details/anthem_librivox/
+
+
+Details
+War and Peace was converted from stereo 2 mono with the following:
+$ ffmpeg -i war_and_peace_01_01_tolstoy.mp3 -ac 1 war_and_peace_01_01_tolstoy2.mp3
+
+Input #0, mp3, from 'war_and_peace_01_01_tolstoy.mp3':
+  Metadata:
+    album           : War and Peace - Book 01
+    genre           : Speech
+    artist          : Leo Tolstoy
+    track           : 1/28
+    title           : Chapter 01
+  Duration: 00:14:49.64, start: 0.000000, bitrate: 128 kb/s
+  Stream #0:0: Audio: mp3, 44100 Hz, stereo, fltp, 128 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to 'war_and_peace_01_01_tolstoy2.mp3':
+  Metadata:
+    TALB            : War and Peace - Book 01
+    TCON            : Speech
+    TPE1            : Leo Tolstoy
+    TRCK            : 1/28
+    TIT2            : Chapter 01
+    TSSE            : Lavf58.76.100
+  Stream #0:0: Audio: mp3, 44100 Hz, mono, fltp
+    Metadata:
+      encoder         : Lavc58.134.100 libmp3lame
+size=    6951kB time=00:14:49.60 bitrate=  64.0kbits/s speed=80.3x    
+video:0kB audio:6950kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004791%
